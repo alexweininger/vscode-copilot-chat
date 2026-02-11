@@ -7,8 +7,9 @@ import { homedir } from 'os';
 import { join } from 'path';
 
 const APP_DIRECTORY = '.copilot';
+const IDE_SUBDIRECTORY = 'ide';
 
 export function getCopilotCliStateDir(): string {
 	const xdgHome = process.env.XDG_STATE_HOME;
-	return xdgHome ? join(xdgHome, APP_DIRECTORY) : join(homedir(), APP_DIRECTORY);
+	return xdgHome ? join(xdgHome, APP_DIRECTORY, IDE_SUBDIRECTORY) : join(homedir(), APP_DIRECTORY, IDE_SUBDIRECTORY);
 }
